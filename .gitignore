@@ -1,0 +1,16 @@
+# Quarto render output
+/.quarto/
+/index.html
+/index_files/
+/_site/
+
+# R session files
+.RData
+.Rhistory
+.Rproj.user/
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

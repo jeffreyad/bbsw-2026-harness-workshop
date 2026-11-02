@@ -1,0 +1,304 @@
+---
+title: "Harness Engineering"
+subtitle: "Specs, checks, and agent skills that make AI output reliable"
+author:
+  - name: "Jeff Dickinson, PhD"
+    affiliations: "Navitas Data Sciences"
+date: "2026-11-04"
+date-format: "long"
+format:
+  revealjs:
+    theme: simple
+    slide-number: true
+    footer: "Agentic AI for Biometrics &middot; BBSW 2026 Day 0"
+    toc: false
+    width: 1200
+    height: 720
+    hash: true
+    code-copy: true
+---
+
+# Welcome {.unnumbered}
+
+## Harness engineering
+
+**Make AI output reliable and traceable**
+
+BBSW 2026 Day 0 Hands-on Workshop &middot; Nov 4, 2026 &middot; Genentech Campus
+
+Jeff Dickinson, PhD — Navitas Data Sciences
+
+::: {.notes}
+Slot: 0:55–1:25 (30 min), after Philip's build/agentic-coding fundamentals.
+Later: 2:05–3:00 integration sprint, shared with Philip.
+
+Everything today is prompt-driven. Each exercise slide has a box you copy and
+paste into the AI agent. Attendees are in the preconfigured Posit environment.
+:::
+
+## The idea in one slide
+
+> **Agent = model + harness**
+
+The model is the same for everyone. What differs is everything around it:
+
+- **Specs** — what "correct" means, written down before any code
+- **Checks** — automated tests that tell the agent (and you) when it is wrong
+- **Skills** — reusable instructions the agent loads for a class of task
+
+A good harness turns "plausible-looking output" into "output I can trust and
+trace."
+
+::: {.notes}
+Vibe coding gets you a prototype in minutes. Harness engineering is what lets
+you put it in front of a reviewer. In biometrics the cost of a plausible but
+wrong derivation is high, so the harness is not optional.
+:::
+
+## Today's loop
+
+1. **Spec** — write the requirement
+2. **Generate** — the agent writes code from the spec
+3. **Check** — run the checks, read the failures
+4. **Refine** — fix the spec, the checks, or the code
+5. **Trace** — every output points back to a spec line
+
+Each step is a **prompt** you paste. You review at every step.
+
+::: {.notes}
+Philip covers automating this loop (MCP, ellmer) in the next block. Here we do
+it by hand so you know what you are automating.
+:::
+
+# Part 1 — Specs {.unnumbered}
+
+## Specs: let the agent interview you
+
+A spec is a short file the agent reads before writing code. Do not write it
+cold — have the agent ask you questions.
+
+``` {.default code-line-numbers="false"}
+I want to derive ADVS from the pharmaversesdtm VS domain and the
+pharmaverseadam ADSL.
+
+Do not write any code yet. Interview me, one question at a time, about
+anything ambiguous: baseline definition, parameters, visit windows, flags.
+When I say "done", write SPEC.md with a table of variables:
+name, label, derivation rule, source, and open questions.
+```
+
+Answer the questions. Then **read** `SPEC.md` and edit anything wrong.
+
+::: {.notes}
+The point: the spec is where human judgment goes. The agent should surface
+decisions (baseline rule, population flag) rather than guess them.
+
+Watch for people accepting the first draft. Ask them to find one rule in
+SPEC.md they would have decided differently.
+:::
+
+## What a good spec contains
+
+- One row per variable: name, label, **derivation rule**, source
+- Explicit decisions — baseline rule, imputation, population
+- **Open questions** the agent could not resolve
+- Nothing the agent invented silently
+
+If you can't point to the spec line that justifies a line of code, the output
+isn't traceable.
+
+# Part 2 — Checks {.unnumbered}
+
+## Checks: tell the agent when it's wrong
+
+Agents iterate well against a failing test. Give it one.
+
+``` {.default code-line-numbers="false"}
+Read SPEC.md. Before deriving anything, write checks.R: a set of
+stopifnot() assertions that encode every testable rule in the spec
+(one row per record key, flags are "Y" or NA, no change from baseline
+on baseline records, etc.).
+Do not write the derivation yet. Show me the checks and tell me which
+spec rules you could NOT turn into a check.
+```
+
+Then:
+
+``` {.default code-line-numbers="false"}
+Now write derive_advs.R from SPEC.md. Run it, then run checks.R.
+If a check fails, fix the code, not the check, and tell me what you changed.
+```
+
+::: {.notes}
+Checks first, code second. This is test-driven development for derivations.
+The "which rules could you NOT check" question is the valuable one — those are
+what a human reviewer must look at by hand.
+
+Instruct: if the agent edits the check to make it pass, that is a red flag.
+:::
+
+## Review markers
+
+Ask the agent to mark every decision that belongs to you:
+
+``` {.default code-line-numbers="false"}
+Add a "# REVIEW:" comment at every line where the code encodes a
+protocol-specific decision (baseline definition, population, windowing).
+Then list all REVIEW markers with line numbers and the SPEC.md row each
+one comes from.
+```
+
+Your attention goes to the marked lines, not the whole file.
+
+# Part 3 — Agent skills {.unnumbered}
+
+## Skills: reusable instructions
+
+A **skill** is a folder with a `SKILL.md` the agent loads when a request
+matches it.
+
+```
+skills/
+  my-skill/
+    SKILL.md        # when to use it, step-by-step instructions
+    references/     # conventions, failure modes
+    scripts/        # code the agent can run
+```
+
+Spec + checks become reusable when you capture them as a skill.
+
+Example: the community **admiral** skills in
+[RConsortium/pharma-skills](https://github.com/RConsortium/pharma-skills).
+
+::: {.notes}
+Contrast with a prompt: a prompt lives in one person's chat history. A skill is
+version-controlled and reviewable. Think SOP the agent actually executes.
+
+Be honest about trade-offs: skills cost tokens, and for simple template-shaped
+tasks the base model already does fine. They help most on convention-heavy,
+high-stakes work.
+:::
+
+## Make your own skill
+
+``` {.default code-line-numbers="false"}
+Look at the SPEC.md, checks.R, and derive_advs.R we just built.
+Create a skill in .claude/skills/advs-derivation/SKILL.md that captures
+how to do this task again:
+
+- frontmatter with a name and a description that says when to use it
+- the steps we followed (interview, spec, checks, derive, review markers)
+- the conventions we settled on
+- what to ask the user rather than assume
+
+Keep it under 100 lines. Show it to me before saving.
+```
+
+Start a **new** session and test it:
+
+``` {.default code-line-numbers="false"}
+Derive ADLB from pharmaversesdtm LB.
+```
+
+Did the agent load your skill without being told to?
+
+::: {.notes}
+Zero-to-skill in a few minutes. If the skill is not triggered, the description
+is usually the problem — it needs to say *when* to use it.
+
+Anthropic's skill-creator skill is an alternative if it is installed in the
+environment.
+:::
+
+## Check the harness itself
+
+``` {.default code-line-numbers="false"}
+Review .claude/skills/advs-derivation/SKILL.md as a skeptical
+biostatistician. What would a new agent get wrong following it? What is
+ambiguous? What is missing a check? Suggest edits; don't apply them.
+```
+
+The harness is code too: **review it, version it, test it.**
+
+# Part 4 — Integration sprint {.unnumbered}
+
+## Apply the workflow to your idea
+
+Pick something from your own work — or one of these:
+
+- ADaM spec-to-code (ADSL, ADAE, ADLB)
+- An interactive visualization with traceability to source data
+- Clinical trial design optimization
+- Portfolio-level analysis or prediction
+- Bioinformatics pipeline QC
+
+You have the full loop: **spec → checks → skill → generate → refine.**
+
+::: {.notes}
+2:05–3:00, with Philip. Combine with his loop engineering (MCP, ellmer)
+material. Circulate; ask people which step they're on rather than what they're
+building.
+:::
+
+## Starter prompt for your idea
+
+``` {.default code-line-numbers="false"}
+I want to build: ______
+
+Do not write code yet. Interview me one question at a time until you can
+write SPEC.md. Then propose checks for it and wait for my approval.
+Use only public or synthetic data. Mark every decision I need to make
+with a "# REVIEW:" comment.
+```
+
+Rules of the sprint:
+
+- Spec first, checks second, code third
+- Public or synthetic data only
+- Be ready to show **one spec line, one check, and one output** in the showcase
+
+## Showcase
+
+Two minutes each:
+
+1. What did you build?
+2. One thing the spec or checks **caught** that you would have missed
+3. One thing you still have to decide yourself
+
+::: {.notes}
+Pick 3–4 volunteers. Praise the "check caught a bug" stories — those are the
+best argument for the harness.
+:::
+
+# Wrap-up {.unnumbered}
+
+## Takeaways
+
+- **Specs** put human judgment first
+- **Checks** let the agent fail fast and let you verify
+- **Skills** make it reusable and reviewable
+- **Review markers** direct your attention to what matters
+
+Output from this workflow is a **drafting aid, not a validated deliverable.**
+
+## Disclaimer
+
+LLM output can be wrong or vary between runs. Independently verify all
+generated code and results against your own QC process before they inform any
+regulatory, clinical, safety, or GxP-regulated activity, and comply with your
+organization's policies.
+
+Review any script an agent writes before running it, and only supply data you
+are permitted to use.
+
+::: {.notes}
+Say this out loud. It's the most important slide for this audience.
+:::
+
+## Thank you
+
+**Jeff Dickinson, PhD**\
+Navitas Data Sciences\
+<jeff.dickinson@navitaslifesciences.com> · [github.com/jeffreyad](https://github.com/jeffreyad)
+
+Questions?
