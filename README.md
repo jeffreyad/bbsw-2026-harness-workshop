@@ -7,6 +7,15 @@ skills) and the integration sprint.
 
 Every exercise slide is a copy-paste prompt for the AI agent.
 
+## Contents
+
+- `index.qmd` — the slide deck
+- `prompts.md` — all workshop prompts (1–7) for copy-paste into Posit
+  Assistant or Claude Code; core vs. stretch prompts are marked
+- `fallback/SPEC.md` — a ready-made ADVS spec for attendees whose spec
+  interview goes sideways
+- `assets/` — slide images (workshop repo QR code, Vibe Coding Ken)
+
 ## Render
 
 ```
