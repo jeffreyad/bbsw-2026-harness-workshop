@@ -36,6 +36,57 @@ Everything today is prompt-driven. Each exercise slide has a box you copy and
 paste into the AI agent. Attendees are in the preconfigured Posit environment.
 :::
 
+## Meet Vibe Coding Ken
+
+:::: {.columns}
+::: {.column width="40%"}
+![](assets/vibe-coding-ken.jpeg){fig-alt="A Ken doll in a box labeled Vibe Coding Ken, wearing a tie-dye shirt, hoodie, headphones and a VIBE CODER badge, with a miniature laptop, keyboard, game controller and coffee mug" height="540"}
+:::
+
+::: {.column width="60%"}
+**He codes the vibes.**
+
+- Prompt in, plausible code out
+- Prototype in minutes
+- No spec, no checks, no review
+
+Great for exploring. But would you hand Ken's ADVS to a reviewer?
+
+**Today: from vibe coding to a harness you can trust.**
+:::
+::::
+
+::: {.notes}
+Icebreaker. Vibe coding is not the enemy — it's how most of us start with an
+agent. The question for biometrics is what you add around it so the output can
+be traced and reviewed. That's the rest of this block.
+:::
+
+## Get the prompts
+
+:::: {.columns}
+::: {.column width="40%"}
+![](assets/workshop-repo-qr.png){fig-alt="QR code linking to github.com/jeffreyad/bbsw-2026-harness-workshop" width="300"}
+:::
+
+::: {.column width="60%"}
+[github.com/jeffreyad/\
+bbsw-2026-harness-workshop](https://github.com/jeffreyad/bbsw-2026-harness-workshop)
+
+- `prompts.md` — every prompt, ready to copy
+- `fallback/SPEC.md` — ready-made ADVS spec
+
+Paste into **Posit Assistant** (Claude Code works too).
+
+**Core:** 1, 2, 3, 5 · **Stretch:** 4, 6 · **Sprint:** 7
+:::
+::::
+
+::: {.notes}
+Leave this up while people open the environment. Anyone who falls behind can
+copy from prompts.md rather than retyping from the screen.
+:::
+
 ## The idea in one slide
 
 > **Agent = model + harness**
@@ -72,26 +123,33 @@ it by hand so you know what you are automating.
 
 # Part 1 — Specs {.unnumbered}
 
-## Specs: let the agent interview you
+## Prompt 1 — Spec: let the agent interview you
 
 A spec is a short file the agent reads before writing code. Do not write it
 cold — have the agent ask you questions.
 
 ``` {.default code-line-numbers="false"}
-I want to derive ADVS from the pharmaversesdtm VS domain and the
-pharmaverseadam ADSL.
+I want to derive ADVS from the VS domain in data/sdtm and the ADSL in
+data/adam/adsl.parquet. Work in a new subfolder called harness/.
 
 Do not write any code yet. Interview me, one question at a time, about
 anything ambiguous: baseline definition, parameters, visit windows, flags.
-When I say "done", write SPEC.md with a table of variables:
+Ask at most 5 questions. When I say "done" (or after question 5), write
+harness/SPEC.md with a table of variables:
 name, label, derivation rule, source, and open questions.
 ```
 
-Answer the questions. Then **read** `SPEC.md` and edit anything wrong.
+Answer the questions. Then **read** `harness/SPEC.md` and edit anything wrong.
+
+Interview went sideways? Copy `fallback/SPEC.md` into `harness/`.
 
 ::: {.notes}
 The point: the spec is where human judgment goes. The agent should surface
 decisions (baseline rule, population flag) rather than guess them.
+
+The 5-question cap keeps this inside the time slot. fallback/SPEC.md has the
+decisions already made (baseline = last non-missing on or before TRTSDT, CHG NA
+on baseline, SAFFL = "Y" only) plus three open questions to discuss.
 
 Watch for people accepting the first draft. Ask them to find one rule in
 SPEC.md they would have decided differently.
@@ -107,26 +165,44 @@ SPEC.md they would have decided differently.
 If you can't point to the spec line that justifies a line of code, the output
 isn't traceable.
 
+## Example: the fallback spec {.smaller}
+
+Two rows from `fallback/SPEC.md`:
+
+- **ABLFL** — "Y" on the last non-missing AVAL on or before TRTSDT, per
+  subject and PARAMCD; otherwise NA
+- **CHG** — AVAL - BASE on post-baseline records; NA on baseline records
+
+**Decisions made:** baseline = last non-missing on or before TRTSDT ·
+CHG is NA (not 0) on baseline · SAFFL = "Y" only
+
+**Open questions** the agent should *not* answer for you:
+
+- How should unscheduled visits be handled for baseline and windowing?
+- Are visit windows required, or is the collected VISIT used as is?
+- Should records with a missing ADT be dropped or kept with a flag?
+
 # Part 2 — Checks {.unnumbered}
 
-## Checks: tell the agent when it's wrong
+## Prompts 2–3 — Checks: tell the agent when it's wrong
 
 Agents iterate well against a failing test. Give it one.
 
 ``` {.default code-line-numbers="false"}
-Read SPEC.md. Before deriving anything, write checks.R: a set of
-stopifnot() assertions that encode every testable rule in the spec
-(one row per record key, flags are "Y" or NA, no change from baseline
-on baseline records, etc.).
-Do not write the derivation yet. Show me the checks and tell me which
+Read harness/SPEC.md. Before deriving anything, write harness/checks.R:
+a set of stopifnot() assertions that encode every testable rule in the
+spec (one row per record key, flags are "Y" or NA, baseline and change
+rules, etc.). Do not write the derivation yet. Show me the checks and tell me which
 spec rules you could NOT turn into a check.
 ```
 
 Then:
 
 ``` {.default code-line-numbers="false"}
-Now write derive_advs.R from SPEC.md. Run it, then run checks.R.
-If a check fails, fix the code, not the check, and tell me what you changed.
+Now write harness/derive_advs.R from harness/SPEC.md. Run it, then run
+harness/checks.R. If a check fails, fix the code first and tell me what
+you changed. If you believe the check itself is wrong, stop and tell me
+why instead of editing it.
 ```
 
 ::: {.notes}
@@ -135,9 +211,10 @@ The "which rules could you NOT check" question is the valuable one — those are
 what a human reviewer must look at by hand.
 
 Instruct: if the agent edits the check to make it pass, that is a red flag.
+The prompt gives it an explicit way out — stop and argue — instead.
 :::
 
-## Review markers
+## Prompt 4 (stretch) — Review markers
 
 Ask the agent to mark every decision that belongs to you:
 
@@ -179,12 +256,15 @@ tasks the base model already does fine. They help most on convention-heavy,
 high-stakes work.
 :::
 
-## Make your own skill
+## Prompt 5 — Make your own skill {.smaller}
 
 ``` {.default code-line-numbers="false"}
-Look at the SPEC.md, checks.R, and derive_advs.R we just built.
-Create a skill in .claude/skills/advs-derivation/SKILL.md that captures
-how to do this task again:
+Look at harness/SPEC.md, harness/checks.R, and harness/derive_advs.R
+we just built. Create a skill called advs-derivation that captures how
+to do this task again, saved in .posit/assistant/skills/advs-derivation/
+(SKILL.md inside it).
+
+The skill should include:
 
 - frontmatter with a name and a description that says when to use it
 - the steps we followed (interview, spec, checks, derive, review markers)
@@ -194,10 +274,11 @@ how to do this task again:
 Keep it under 100 lines. Show it to me before saving.
 ```
 
-Start a **new** session and test it:
+Claude Code: save to `.claude/skills/advs-derivation/SKILL.md` instead.
+Then start a **new** chat so the skill loads, and test it:
 
 ``` {.default code-line-numbers="false"}
-Derive ADLB from pharmaversesdtm LB.
+Derive ADLB from the LB domain in data/sdtm.
 ```
 
 Did the agent load your skill without being told to?
@@ -210,10 +291,10 @@ Anthropic's skill-creator skill is an alternative if it is installed in the
 environment.
 :::
 
-## Check the harness itself
+## Prompt 6 (stretch) — Check the harness itself
 
 ``` {.default code-line-numbers="false"}
-Review .claude/skills/advs-derivation/SKILL.md as a skeptical
+Review the advs-derivation SKILL.md as a skeptical
 biostatistician. What would a new agent get wrong following it? What is
 ambiguous? What is missing a check? Suggest edits; don't apply them.
 ```
@@ -240,7 +321,7 @@ material. Circulate; ask people which step they're on rather than what they're
 building.
 :::
 
-## Starter prompt for your idea
+## Prompt 7 — Starter prompt for your idea
 
 ``` {.default code-line-numbers="false"}
 I want to build: ______
@@ -280,6 +361,8 @@ best argument for the harness.
 - **Review markers** direct your attention to what matters
 
 Output from this workflow is a **drafting aid, not a validated deliverable.**
+
+All prompts: `prompts.md` in [github.com/jeffreyad/bbsw-2026-harness-workshop](https://github.com/jeffreyad/bbsw-2026-harness-workshop)
 
 ## Disclaimer
 
