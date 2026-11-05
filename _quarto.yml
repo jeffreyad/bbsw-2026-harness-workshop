@@ -1,6 +1,13 @@
+# A website project so `quarto publish gh-pages` can publish both pages
+# (quarto publish only accepts website, book or manuscript projects).
+# No navbar or sidebar is configured, so the pages render as standalone.
 project:
-  type: default
+  type: website
   output-dir: _site
   render:
     - index.qmd
     - benchmarks.qmd
+
+website:
+  title: "BBSW 2026 Harness Engineering"
+  site-url: "https://jeffreyad.github.io/bbsw-2026-harness-workshop/"
