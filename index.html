@@ -480,6 +480,108 @@ bbsw-2026-harness-workshop</a></p>
           display:block!important;
       }</style></aside>
 </section>
+<section id="do-skills-help-the-pharma-skills-benchmarks" class="slide level2 smaller">
+<h2>Do skills help? The pharma-skills benchmarks</h2>
+<p>Community benchmarks in <a href="https://github.com/RConsortium/pharma-skills/issues?q=is%3Aissue+%5Bbenchmark%5D">RConsortium/pharma-skills</a>: the same task run <strong>with</strong> and <strong>without</strong> the skill, scored against a rubric.</p>
+<div style="font-size: 0.8em">
+<table class="caption-top">
+<colgroup>
+<col style="width: 27%">
+<col style="width: 37%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Skill</th>
+<th style="text-align: left;">Scenarios</th>
+<th style="text-align: right;">With skill</th>
+<th style="text-align: right;">Without</th>
+<th style="text-align: center;">W / T / L</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">admiral-adsl</td>
+<td style="text-align: left;">ADSL, baseline VS, pop. flags</td>
+<td style="text-align: right;"><strong>93%</strong></td>
+<td style="text-align: right;">70%</td>
+<td style="text-align: center;">2 / 1 / 0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">admiral-adae</td>
+<td style="text-align: left;">TEAE, imputation, recoding</td>
+<td style="text-align: right;"><strong>100%</strong></td>
+<td style="text-align: right;">67%</td>
+<td style="text-align: center;">2 / 0 / 0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">admiral-bds</td>
+<td style="text-align: left;">ADVS, ADLB, CTCAE grading</td>
+<td style="text-align: right;"><strong>91%</strong></td>
+<td style="text-align: right;">72%</td>
+<td style="text-align: center;">3 / 0 / 0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">admiral-adtte, -adrs</td>
+<td style="text-align: left;">time-to-event, RECIST 1.1</td>
+<td style="text-align: right;"><strong>82%</strong></td>
+<td style="text-align: right;">56%</td>
+<td style="text-align: center;">2 / 0 / 0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">sdtm-oak</td>
+<td style="text-align: left;">AE domain from raw</td>
+<td style="text-align: right;"><strong>88%</strong></td>
+<td style="text-align: right;">63%</td>
+<td style="text-align: center;">1 / 0 / 0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">group-sequential-design</td>
+<td style="text-align: left;">15 trial-design scenarios</td>
+<td style="text-align: right;"><strong>73%</strong></td>
+<td style="text-align: right;">51%</td>
+<td style="text-align: center;">10 / 2 / 3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">clinical-trial-simulation</td>
+<td style="text-align: left;">NSCLC, NPH oncology sims</td>
+<td style="text-align: right;">90%</td>
+<td style="text-align: right;"><strong>91%</strong></td>
+<td style="text-align: center;">0 / 1 / 1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Mean % of rubric items passed, latest scored run per issue (mostly Claude); W / T / L = skill wins, ties, losses. Small <em>n</em>, rubrics differ by issue — directional, not a validated comparison.</p>
+<p><strong>Pattern:</strong> big gains on convention-heavy derivations; little or none where the base model already knows the method.</p>
+<aside class="notes">
+<p>Sources (pharma-skills issues, read Nov 5, 2026; latest scored run per issue):</p>
+<ul>
+<li>admiral-adsl: #126 100 vs 75; #141 93.3 vs 93.3 (tie); #165 86.1 vs 41.7</li>
+<li>admiral-adae: #137 100 vs 46.7; #148 100 vs 87.5</li>
+<li>admiral-bds: #147 ADVS 94.4 vs 83.3; #149 ADLB 97.2 vs 52.8; #188 CTCAE 82.6 vs 80.4</li>
+<li>admiral-adtte #166 88.9 vs 61.1; admiral-adrs #167 75.0 vs 50.0</li>
+<li>sdtm-oak #159 87.5 vs 62.5</li>
+<li>group-sequential-design: #80 roll-up (latest run per issue, Apr 28). The newer #146 roll-up (best with-skill run, May 31) is 90% vs 62%, 16/4/1, but that picks the skill’s best showing.</li>
+<li>clinical-trial-simulation: #118 97.5 vs 100; #104 81.8 vs 81.8</li>
+</ul>
+<p>Tie-in to today: #147 is our ADVS task. The skill’s run flagged 674 unscheduled-visit records, the same open question in fallback/SPEC.md.</p>
+<p>GSD losses were scope gaps (problem outside what the skill covers), not the base model being smarter. That’s the argument for writing “when NOT to use this” into a skill’s description.</p>
+<p>Many runs differ in model, skill version, and rubric; several issues re-scored with tightened rubrics. Don’t quote these as precise numbers.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="prompt-5-make-your-own-skill" class="slide level2 smaller">
 <h2>Prompt 5 — Make your own skill</h2>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb6-1"><a href="" aria-hidden="true" tabindex="-1"></a>Look at harness/SPEC.md, harness/checks.R, and harness/derive_advs.R</span>
