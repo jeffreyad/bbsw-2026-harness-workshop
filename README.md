@@ -14,7 +14,8 @@ Every exercise slide is a copy-paste prompt for the AI agent.
   Assistant or Claude Code; core vs. stretch prompts are marked
 - `fallback/SPEC.md` — a ready-made ADVS spec for attendees whose spec
   interview goes sideways
-- `assets/` — slide images (workshop repo QR code, Vibe Coding Ken)
+- `assets/` — slide images (QR codes for the slides and the repo, Navitas
+  logo, Vibe Coding Ken)
 
 ## Render
 
