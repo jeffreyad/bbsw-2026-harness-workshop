@@ -65,16 +65,29 @@ agent. The question for biometrics is what you add around it so the output can
 be traced and reviewed. That's the rest of this block.
 :::
 
-## Get the prompts
+## Get the slides and prompts
 
 :::: {.columns}
-::: {.column width="40%"}
-![](assets/workshop-repo-qr.png){fig-alt="QR code linking to github.com/jeffreyad/bbsw-2026-harness-workshop" width="300"}
+::: {.column width="24%"}
+::: {style="text-align: center"}
+![](assets/slides-qr.png){.nostretch fig-alt="QR code linking to the slides at jeffreyad.github.io/bbsw-2026-harness-workshop" width="250"}
+
+**Slides**
+:::
 :::
 
-::: {.column width="60%"}
-[github.com/jeffreyad/\
-bbsw-2026-harness-workshop](https://github.com/jeffreyad/bbsw-2026-harness-workshop)
+::: {.column width="24%"}
+::: {style="text-align: center"}
+![](assets/workshop-repo-qr.png){.nostretch fig-alt="QR code linking to github.com/jeffreyad/bbsw-2026-harness-workshop" width="250"}
+
+**Repo & prompts**
+:::
+:::
+
+::: {.column width="52%"}
+::: {style="font-size: 0.8em"}
+[jeffreyad.github.io/\
+bbsw-2026-harness-workshop](https://jeffreyad.github.io/bbsw-2026-harness-workshop/)
 
 - `prompts.md` — every prompt, ready to copy
 - `fallback/SPEC.md` — ready-made ADVS spec
@@ -82,6 +95,7 @@ bbsw-2026-harness-workshop](https://github.com/jeffreyad/bbsw-2026-harness-works
 Paste into **Posit Assistant** (Claude Code works too).
 
 **Core:** 1, 2, 3, 5 · **Stretch:** 4, 6 · **Sprint:** 7
+:::
 :::
 ::::
 
@@ -432,10 +446,24 @@ Say this out loud. It's the most important slide for this audience.
 
 ## Thank you
 
+
+:::: {.columns}
+::: {.column width="68%"}
 **Jeff Dickinson, PhD**\
 Navitas Data Sciences\
-<jeff.dickinson@navitaslifesciences.com> · [github.com/jeffreyad](https://github.com/jeffreyad)
+<jeff.dickinson@navitaslifesciences.com>\
+[github.com/jeffreyad](https://github.com/jeffreyad)
 
 Questions?
 
 ![](assets/navitas-logo.png){.nostretch fig-alt="Navitas Life Sciences logo" width="240"}
+:::
+
+::: {.column width="32%"}
+::: {style="text-align: center"}
+![](assets/slides-qr.png){.nostretch fig-alt="QR code linking to the slides at jeffreyad.github.io/bbsw-2026-harness-workshop" width="300"}
+
+**Slides**
+:::
+:::
+::::
