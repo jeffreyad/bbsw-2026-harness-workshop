@@ -8,7 +8,8 @@ date: "2026-11-04"
 date-format: "long"
 format:
   revealjs:
-    theme: simple
+    theme: [simple, navitas.scss]
+    logo: assets/navitas-logo.png
     slide-number: true
     footer: "Agentic AI for Biometrics &middot; BBSW 2026 Day 0"
     toc: false
@@ -27,6 +28,8 @@ format:
 BBSW 2026 Day 0 Hands-on Workshop &middot; Nov 4, 2026 &middot; Genentech Campus
 
 Jeff Dickinson, PhD — Navitas Data Sciences
+
+![](assets/navitas-logo.png){.nostretch fig-alt="Navitas Life Sciences logo" width="240"}
 
 ::: {.notes}
 Slot: 0:55–1:25 (30 min), after Philip's build/agentic-coding fundamentals.
@@ -434,3 +437,5 @@ Navitas Data Sciences\
 <jeff.dickinson@navitaslifesciences.com> · [github.com/jeffreyad](https://github.com/jeffreyad)
 
 Questions?
+
+![](assets/navitas-logo.png){.nostretch fig-alt="Navitas Life Sciences logo" width="240"}

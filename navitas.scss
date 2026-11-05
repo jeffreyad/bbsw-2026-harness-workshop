@@ -1,0 +1,36 @@
+/*-- scss:defaults --*/
+// Navitas Life Sciences brand colors (sampled from assets/navitas-logo.png)
+$navitas-navy:   #0d3b64;
+$navitas-pink:   #ed4583;
+$navitas-teal:   #1ab6cc;
+$navitas-green:  #8bc34a;
+$navitas-purple: #8a72a8;
+
+$presentation-heading-color: $navitas-navy;
+$link-color: $navitas-navy;
+$link-color-hover: $navitas-pink;
+$code-color: $navitas-navy;
+
+/*-- scss:rules --*/
+// Four-color stripe along the bottom edge, echoing the logo ribbons
+.reveal::after {
+  content: "";
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  height: 6px;
+  background: linear-gradient(to right,
+    $navitas-green 0 25%, $navitas-pink 25% 50%,
+    $navitas-teal 50% 75%, $navitas-purple 75% 100%);
+  z-index: 30;
+}
+
+.reveal .slides a { text-decoration: underline; text-decoration-color: $navitas-teal; }
+
+.reveal blockquote { border-left: 4px solid $navitas-pink; }
+
+// Section divider slides in brand navy
+.reveal .slides section.title-slide h1,
+.reveal .slides > section > h1 { color: $navitas-navy; }
+
+// Corner logo: keep it small and clear of the slide number
+.reveal .slide-logo { max-height: 48px !important; bottom: 14px !important; }
