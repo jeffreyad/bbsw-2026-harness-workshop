@@ -1,0 +1,96 @@
+---
+title: "pharma-skills benchmarks"
+subtitle: "Do agent skills help on clinical data science tasks? A snapshot."
+date: "2026-11-05"
+date-format: "long"
+format:
+  html:
+    theme: cosmo
+    toc: false
+    embed-resources: false
+    page-layout: article
+---
+
+Community benchmarks from
+[RConsortium/pharma-skills](https://github.com/RConsortium/pharma-skills)
+(R Consortium Submissions Working Group, Pilot 7). Each benchmark issue runs
+the same task **with** and **without** the skill and scores both against a
+rubric written by the issue author.
+
+::: {.callout-note}
+This is an informal snapshot compiled from the public issues on
+November 5, 2026. It is not an official R Consortium summary. Several figures
+were read from long comment threads, so check the linked issue before quoting
+a number.
+:::
+
+## By skill
+
+Mean % of rubric items passed, using the latest scored run per issue (mostly
+Claude models). W / T / L = skill wins, ties, losses.
+
+| Skill | With skill | Without | W / T / L |
+|:--|--:|--:|:-:|
+| admiral-adsl | **93%** | 70% | 2 / 1 / 0 |
+| admiral-adae | **100%** | 67% | 2 / 0 / 0 |
+| admiral-bds | **91%** | 72% | 3 / 0 / 0 |
+| admiral-adtte, admiral-adrs | **82%** | 56% | 2 / 0 / 0 |
+| sdtm-oak | **88%** | 63% | 1 / 0 / 0 |
+| group-sequential-design | **73%** | 51% | 10 / 2 / 3 |
+| clinical-trial-simulation | 90% | **91%** | 0 / 1 / 1 |
+
+**Pattern:** large gains on convention-heavy ADaM and SDTM derivations; little
+or no gain where the base model already knows the method.
+
+## By issue
+
+Latest scored run per issue. Follow the link for the full thread, rubric, and
+earlier runs.
+
+| Issue | Task | With | Without |
+|:--|:--|--:|--:|
+| [#126](https://github.com/RConsortium/pharma-skills/issues/126) | ADSL from pharmaversesdtm | 100% | 75% |
+| [#141](https://github.com/RConsortium/pharma-skills/issues/141) | ADSL baseline vital-sign variables | 93% | 93% |
+| [#165](https://github.com/RConsortium/pharma-skills/issues/165) | ADSL population flags (SAFFL, ITTFL, PPROTFL) | 86% | 42% |
+| [#137](https://github.com/RConsortium/pharma-skills/issues/137) | ADAE, basic TEAE | 100% | 47% |
+| [#148](https://github.com/RConsortium/pharma-skills/issues/148) | ADAE, imputation and recoding | 100% | 88% |
+| [#147](https://github.com/RConsortium/pharma-skills/issues/147) | ADVS vital signs | 94% | 83% |
+| [#149](https://github.com/RConsortium/pharma-skills/issues/149) | ADLB laboratory values | 97% | 53% |
+| [#188](https://github.com/RConsortium/pharma-skills/issues/188) | ADLB NCI-CTCAE v5.0 grading | 83% | 80% |
+| [#166](https://github.com/RConsortium/pharma-skills/issues/166) | ADTTE time to first serious AE | 89% | 61% |
+| [#167](https://github.com/RConsortium/pharma-skills/issues/167) | ADRS RECIST 1.1 response | 75% | 50% |
+| [#159](https://github.com/RConsortium/pharma-skills/issues/159) | SDTM AE domain from raw data | 88% | 63% |
+| [#118](https://github.com/RConsortium/pharma-skills/issues/118) | Phase 3 NSCLC trial simulation | 98% | 100% |
+| [#104](https://github.com/RConsortium/pharma-skills/issues/104) | Oncology simulation with delayed effect | 82% | 82% |
+
+**group-sequential-design** has its own roll-ups across 15–21 trial-design
+scenarios:
+
+- [#80](https://github.com/RConsortium/pharma-skills/issues/80): latest run per
+  issue (April 28): **73%** vs 51%; 10 wins, 2 ties, 3 losses.
+- [#146](https://github.com/RConsortium/pharma-skills/issues/146): best
+  with-skill run per issue (May 31): **90%** vs 62%; 16 wins, 4 ties, 1 loss.
+  This picks the skill's best showing, so treat it as a ceiling.
+
+## Caveats
+
+- Small numbers of runs; rubrics differ by issue and several were tightened
+  and re-scored over time.
+- Runs vary in model, skill version, and date. Results are directional, not a
+  validated comparison.
+- Losses for group-sequential-design were mostly scope gaps (problems outside
+  what the skill covers), not the base model being better.
+
+## Get involved
+
+- Browse all benchmark issues:
+  [github.com/RConsortium/pharma-skills/issues](https://github.com/RConsortium/pharma-skills/issues?q=is%3Aissue+%5Bbenchmark%5D)
+- Contribute a skill, a test case, or a benchmark run:
+  [github.com/RConsortium/pharma-skills](https://github.com/RConsortium/pharma-skills)
+- Submissions Working Group:
+  [rconsortium.github.io/submissions-wg](https://rconsortium.github.io/submissions-wg/)
+
+---
+
+Compiled by Jeff Dickinson for BBSW 2026. Workshop slides:
+[jeffreyad.github.io/bbsw-2026-harness-workshop](https://jeffreyad.github.io/bbsw-2026-harness-workshop/)

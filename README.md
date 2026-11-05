@@ -10,6 +10,8 @@ Every exercise slide is a copy-paste prompt for the AI agent.
 ## Contents
 
 - `index.qmd` — the slide deck
+- `benchmarks.qmd` — one-page, phone-friendly snapshot of the
+  RConsortium/pharma-skills benchmark results (published as `benchmarks.html`)
 - `prompts.md` — all workshop prompts (1–7) for copy-paste into Posit
   Assistant or Claude Code; core vs. stretch prompts are marked
 - `fallback/SPEC.md` — a ready-made ADVS spec for attendees whose spec
@@ -29,12 +31,13 @@ Requires [Quarto](https://quarto.org). Output is a reveal.js deck
 
 ## Publish
 
-Every push to `main` re-renders the deck and publishes it to GitHub Pages
+Every push to `main` re-renders the project (deck + benchmarks page) and
+publishes it to GitHub Pages
 (<https://jeffreyad.github.io/bbsw-2026-harness-workshop/>) via
 `.github/workflows/publish.yml`. To publish by hand instead:
 
 ```
-quarto publish gh-pages index.qmd
+quarto publish gh-pages
 ```
 
 Adapted from [rpharma-2026-workshop](https://github.com/jeffreyad/rpharma-2026-workshop).
