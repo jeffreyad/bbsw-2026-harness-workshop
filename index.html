@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="index_files/libs/clipboard/clipboard.min.js"></script>
-<script src="index_files/libs/quarto-html/tabby.min.js"></script>
-<script src="index_files/libs/quarto-html/popper.min.js"></script>
-<script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
-<link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="index_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-html/tabby.min.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.11.9">
 
   <meta name="author" content="Jeff Dickinson, PhD">
   <meta name="dcterms.date" content="2026-11-04">
-  <title>Harness Engineering</title>
+  <title>BBSW 2026 Harness Engineering – Harness Engineering</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="index_files/libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="index_files/libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reveal.css">
   <style>
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -102,11 +102,11 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-5307c8efae5859c094c7462ca0babd72.css">
-  <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="index_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-5307c8efae5859c094c7462ca0babd72.css">
+  <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
     .reveal div.sourceCode {
       margin: 0;
@@ -368,14 +368,14 @@ bbsw-2026-harness-workshop</a></p>
 <section id="prompt-1-spec-let-the-agent-interview-you" class="slide level2">
 <h2>Prompt 1 — Spec: let the agent interview you</h2>
 <p>A spec is a short file the agent reads before writing code. Do not write it cold — have the agent ask you questions.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="" aria-hidden="true" tabindex="-1"></a>I want to derive ADVS from the VS domain in data/sdtm and the ADSL in</span>
-<span id="cb1-2"><a href="" aria-hidden="true" tabindex="-1"></a>data/adam/adsl.parquet. Work in a new subfolder called harness/.</span>
-<span id="cb1-3"><a href="" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="" aria-hidden="true" tabindex="-1"></a>Do not write any code yet. Interview me, one question at a time, about</span>
-<span id="cb1-5"><a href="" aria-hidden="true" tabindex="-1"></a>anything ambiguous: baseline definition, parameters, visit windows, flags.</span>
-<span id="cb1-6"><a href="" aria-hidden="true" tabindex="-1"></a>Ask at most 5 questions. When I say "done" (or after question 5), write</span>
-<span id="cb1-7"><a href="" aria-hidden="true" tabindex="-1"></a>harness/SPEC.md with a table of variables:</span>
-<span id="cb1-8"><a href="" aria-hidden="true" tabindex="-1"></a>name, label, derivation rule, source, and open questions.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a>I want to derive ADVS from the VS domain in data/sdtm and the ADSL in</span>
+<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a>data/adam/adsl.parquet. Work in a new subfolder called harness/.</span>
+<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a>Do not write any code yet. Interview me, one question at a time, about</span>
+<span id="cb1-5"><a aria-hidden="true" tabindex="-1"></a>anything ambiguous: baseline definition, parameters, visit windows, flags.</span>
+<span id="cb1-6"><a aria-hidden="true" tabindex="-1"></a>Ask at most 5 questions. When I say "done" (or after question 5), write</span>
+<span id="cb1-7"><a aria-hidden="true" tabindex="-1"></a>harness/SPEC.md with a table of variables:</span>
+<span id="cb1-8"><a aria-hidden="true" tabindex="-1"></a>name, label, derivation rule, source, and open questions.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Answer the questions. Then <strong>read</strong> <code>harness/SPEC.md</code> and edit anything wrong.</p>
 <p>Interview went sideways? Copy <code>fallback/SPEC.md</code> into <code>harness/</code>.</p>
 <aside class="notes">
@@ -427,16 +427,16 @@ bbsw-2026-harness-workshop</a></p>
 <section id="prompts-23-checks-tell-the-agent-when-its-wrong" class="slide level2">
 <h2>Prompts 2–3 — Checks: tell the agent when it’s wrong</h2>
 <p>Agents iterate well against a failing test. Give it one.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb2-1"><a href="" aria-hidden="true" tabindex="-1"></a>Read harness/SPEC.md. Before deriving anything, write harness/checks.R:</span>
-<span id="cb2-2"><a href="" aria-hidden="true" tabindex="-1"></a>a set of stopifnot() assertions that encode every testable rule in the</span>
-<span id="cb2-3"><a href="" aria-hidden="true" tabindex="-1"></a>spec (one row per record key, flags are "Y" or NA, baseline and change</span>
-<span id="cb2-4"><a href="" aria-hidden="true" tabindex="-1"></a>rules, etc.). Do not write the derivation yet. Show me the checks and tell me which</span>
-<span id="cb2-5"><a href="" aria-hidden="true" tabindex="-1"></a>spec rules you could NOT turn into a check.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a>Read harness/SPEC.md. Before deriving anything, write harness/checks.R:</span>
+<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a>a set of stopifnot() assertions that encode every testable rule in the</span>
+<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a>spec (one row per record key, flags are "Y" or NA, baseline and change</span>
+<span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a>rules, etc.). Do not write the derivation yet. Show me the checks and tell me which</span>
+<span id="cb2-5"><a aria-hidden="true" tabindex="-1"></a>spec rules you could NOT turn into a check.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Then:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb3-1"><a href="" aria-hidden="true" tabindex="-1"></a>Now write harness/derive_advs.R from harness/SPEC.md. Run it, then run</span>
-<span id="cb3-2"><a href="" aria-hidden="true" tabindex="-1"></a>harness/checks.R. If a check fails, fix the code first and tell me what</span>
-<span id="cb3-3"><a href="" aria-hidden="true" tabindex="-1"></a>you changed. If you believe the check itself is wrong, stop and tell me</span>
-<span id="cb3-4"><a href="" aria-hidden="true" tabindex="-1"></a>why instead of editing it.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a>Now write harness/derive_advs.R from harness/SPEC.md. Run it, then run</span>
+<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a>harness/checks.R. If a check fails, fix the code first and tell me what</span>
+<span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a>you changed. If you believe the check itself is wrong, stop and tell me</span>
+<span id="cb3-4"><a aria-hidden="true" tabindex="-1"></a>why instead of editing it.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <aside class="notes">
 <p>Checks first, code second. This is test-driven development for derivations. The “which rules could you NOT check” question is the valuable one — those are what a human reviewer must look at by hand.</p>
 <p>Instruct: if the agent edits the check to make it pass, that is a red flag. The prompt gives it an explicit way out — stop and argue — instead.</p>
@@ -455,10 +455,10 @@ bbsw-2026-harness-workshop</a></p>
 <section id="prompt-4-stretch-review-markers" class="slide level2">
 <h2>Prompt 4 (stretch) — Review markers</h2>
 <p>Ask the agent to mark every decision that belongs to you:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb4-1"><a href="" aria-hidden="true" tabindex="-1"></a>Add a "# REVIEW:" comment at every line where the code encodes a</span>
-<span id="cb4-2"><a href="" aria-hidden="true" tabindex="-1"></a>protocol-specific decision (baseline definition, population, windowing).</span>
-<span id="cb4-3"><a href="" aria-hidden="true" tabindex="-1"></a>Then list all REVIEW markers with line numbers and the SPEC.md row each</span>
-<span id="cb4-4"><a href="" aria-hidden="true" tabindex="-1"></a>one comes from.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a>Add a "# REVIEW:" comment at every line where the code encodes a</span>
+<span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a>protocol-specific decision (baseline definition, population, windowing).</span>
+<span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a>Then list all REVIEW markers with line numbers and the SPEC.md row each</span>
+<span id="cb4-4"><a aria-hidden="true" tabindex="-1"></a>one comes from.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Your attention goes to the marked lines, not the whole file.</p>
 </section></section>
 <section>
@@ -595,21 +595,21 @@ bbsw-2026-harness-workshop</a></p>
 </section>
 <section id="prompt-5-make-your-own-skill" class="slide level2 smaller">
 <h2>Prompt 5 — Make your own skill</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb6-1"><a href="" aria-hidden="true" tabindex="-1"></a>Look at harness/SPEC.md, harness/checks.R, and harness/derive_advs.R</span>
-<span id="cb6-2"><a href="" aria-hidden="true" tabindex="-1"></a>we just built. Create a skill called advs-derivation that captures how</span>
-<span id="cb6-3"><a href="" aria-hidden="true" tabindex="-1"></a>to do this task again, saved in .posit/assistant/skills/advs-derivation/</span>
-<span id="cb6-4"><a href="" aria-hidden="true" tabindex="-1"></a>(SKILL.md inside it).</span>
-<span id="cb6-5"><a href="" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-6"><a href="" aria-hidden="true" tabindex="-1"></a>The skill should include:</span>
-<span id="cb6-7"><a href="" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-8"><a href="" aria-hidden="true" tabindex="-1"></a>- frontmatter with a name and a description that says when to use it</span>
-<span id="cb6-9"><a href="" aria-hidden="true" tabindex="-1"></a>- the steps we followed (interview, spec, checks, derive, review markers)</span>
-<span id="cb6-10"><a href="" aria-hidden="true" tabindex="-1"></a>- the conventions we settled on</span>
-<span id="cb6-11"><a href="" aria-hidden="true" tabindex="-1"></a>- what to ask the user rather than assume</span>
-<span id="cb6-12"><a href="" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-13"><a href="" aria-hidden="true" tabindex="-1"></a>Keep it under 100 lines. Show it to me before saving.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a>Look at harness/SPEC.md, harness/checks.R, and harness/derive_advs.R</span>
+<span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a>we just built. Create a skill called advs-derivation that captures how</span>
+<span id="cb6-3"><a aria-hidden="true" tabindex="-1"></a>to do this task again, saved in .posit/assistant/skills/advs-derivation/</span>
+<span id="cb6-4"><a aria-hidden="true" tabindex="-1"></a>(SKILL.md inside it).</span>
+<span id="cb6-5"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a aria-hidden="true" tabindex="-1"></a>The skill should include:</span>
+<span id="cb6-7"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-8"><a aria-hidden="true" tabindex="-1"></a>- frontmatter with a name and a description that says when to use it</span>
+<span id="cb6-9"><a aria-hidden="true" tabindex="-1"></a>- the steps we followed (interview, spec, checks, derive, review markers)</span>
+<span id="cb6-10"><a aria-hidden="true" tabindex="-1"></a>- the conventions we settled on</span>
+<span id="cb6-11"><a aria-hidden="true" tabindex="-1"></a>- what to ask the user rather than assume</span>
+<span id="cb6-12"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-13"><a aria-hidden="true" tabindex="-1"></a>Keep it under 100 lines. Show it to me before saving.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Claude Code: save to <code>.claude/skills/advs-derivation/SKILL.md</code> instead. Then start a <strong>new</strong> chat so the skill loads, and test it:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb7-1"><a href="" aria-hidden="true" tabindex="-1"></a>Derive ADLB from the LB domain in data/sdtm.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a>Derive ADLB from the LB domain in data/sdtm.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Did the agent load your skill without being told to?</p>
 <aside class="notes">
 <p>Zero-to-skill in a few minutes. If the skill is not triggered, the description is usually the problem — it needs to say <em>when</em> to use it.</p>
@@ -628,9 +628,9 @@ bbsw-2026-harness-workshop</a></p>
 </section>
 <section id="prompt-6-stretch-check-the-harness-itself" class="slide level2">
 <h2>Prompt 6 (stretch) — Check the harness itself</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb8-1"><a href="" aria-hidden="true" tabindex="-1"></a>Review the advs-derivation SKILL.md as a skeptical</span>
-<span id="cb8-2"><a href="" aria-hidden="true" tabindex="-1"></a>biostatistician. What would a new agent get wrong following it? What is</span>
-<span id="cb8-3"><a href="" aria-hidden="true" tabindex="-1"></a>ambiguous? What is missing a check? Suggest edits; don't apply them.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb8-1"><a aria-hidden="true" tabindex="-1"></a>Review the advs-derivation SKILL.md as a skeptical</span>
+<span id="cb8-2"><a aria-hidden="true" tabindex="-1"></a>biostatistician. What would a new agent get wrong following it? What is</span>
+<span id="cb8-3"><a aria-hidden="true" tabindex="-1"></a>ambiguous? What is missing a check? Suggest edits; don't apply them.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>The harness is code too: <strong>review it, version it, test it.</strong></p>
 </section></section>
 <section>
@@ -665,12 +665,12 @@ bbsw-2026-harness-workshop</a></p>
 </section>
 <section id="prompt-7-starter-prompt-for-your-idea" class="slide level2">
 <h2>Prompt 7 — Starter prompt for your idea</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb9-1"><a href="" aria-hidden="true" tabindex="-1"></a>I want to build: ______</span>
-<span id="cb9-2"><a href="" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-3"><a href="" aria-hidden="true" tabindex="-1"></a>Do not write code yet. Interview me one question at a time until you can</span>
-<span id="cb9-4"><a href="" aria-hidden="true" tabindex="-1"></a>write SPEC.md. Then propose checks for it and wait for my approval.</span>
-<span id="cb9-5"><a href="" aria-hidden="true" tabindex="-1"></a>Use only public or synthetic data. Mark every decision I need to make</span>
-<span id="cb9-6"><a href="" aria-hidden="true" tabindex="-1"></a>with a "# REVIEW:" comment.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a>I want to build: ______</span>
+<span id="cb9-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a aria-hidden="true" tabindex="-1"></a>Do not write code yet. Interview me one question at a time until you can</span>
+<span id="cb9-4"><a aria-hidden="true" tabindex="-1"></a>write SPEC.md. Then propose checks for it and wait for my approval.</span>
+<span id="cb9-5"><a aria-hidden="true" tabindex="-1"></a>Use only public or synthetic data. Mark every decision I need to make</span>
+<span id="cb9-6"><a aria-hidden="true" tabindex="-1"></a>with a "# REVIEW:" comment.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Rules of the sprint:</p>
 <ul>
 <li>Spec first, checks second, code third</li>
@@ -751,6 +751,7 @@ Navitas Data Sciences<br>
 </div>
 </div></div>
 
+
 </section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
@@ -761,19 +762,19 @@ Navitas Data Sciences<br>
 </div></div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="index_files/libs/revealjs/dist/reveal.js"></script>
+  <script src="site_libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="index_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="index_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="index_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="site_libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="index_files/libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="index_files/libs/revealjs/plugin/search/search.js"></script>
-  <script src="index_files/libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="index_files/libs/revealjs/plugin/math/math.js"></script>
+  <script src="site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="site_libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>
@@ -1038,7 +1039,7 @@ Navitas Data Sciences<br>
         }
           var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
           var mailtoRegex = new RegExp(/^mailto:/);
-            var filterRegex = new RegExp('/' + window.location.host + '/');
+            var filterRegex = new RegExp("https:\/\/jeffreyad\.github\.io\/bbsw-2026-harness-workshop\/");
           var isInternal = (href) => {
               return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
           }

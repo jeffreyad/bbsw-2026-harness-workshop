@@ -1,0 +1,177 @@
+[
+  {
+    "objectID": "benchmarks.html",
+    "href": "benchmarks.html",
+    "title": "pharma-skills benchmarks",
+    "section": "",
+    "text": "Community benchmarks from RConsortium/pharma-skills (R Consortium Submissions Working Group, Pilot 7). Each benchmark issue runs the same task with and without the skill and scores both against a rubric written by the issue author."
+  },
+  {
+    "objectID": "benchmarks.html#by-skill",
+    "href": "benchmarks.html#by-skill",
+    "title": "pharma-skills benchmarks",
+    "section": "By skill",
+    "text": "By skill\nMean % of rubric items passed, using the latest scored run per issue (mostly Claude models). W / T / L = skill wins, ties, losses.\n\n\n\nSkill\nWith skill\nWithout\nW / T / L\n\n\n\n\nadmiral-adsl\n93%\n70%\n2 / 1 / 0\n\n\nadmiral-adae\n100%\n67%\n2 / 0 / 0\n\n\nadmiral-bds\n91%\n72%\n3 / 0 / 0\n\n\nadmiral-adtte, admiral-adrs\n82%\n56%\n2 / 0 / 0\n\n\nsdtm-oak\n88%\n63%\n1 / 0 / 0\n\n\ngroup-sequential-design\n73%\n51%\n10 / 2 / 3\n\n\nclinical-trial-simulation\n90%\n91%\n0 / 1 / 1\n\n\n\nPattern: large gains on convention-heavy ADaM and SDTM derivations; little or no gain where the base model already knows the method."
+  },
+  {
+    "objectID": "benchmarks.html#by-issue",
+    "href": "benchmarks.html#by-issue",
+    "title": "pharma-skills benchmarks",
+    "section": "By issue",
+    "text": "By issue\nLatest scored run per issue. Follow the link for the full thread, rubric, and earlier runs.\n\n\n\nIssue\nTask\nWith\nWithout\n\n\n\n\n#126\nADSL from pharmaversesdtm\n100%\n75%\n\n\n#141\nADSL baseline vital-sign variables\n93%\n93%\n\n\n#165\nADSL population flags (SAFFL, ITTFL, PPROTFL)\n86%\n42%\n\n\n#137\nADAE, basic TEAE\n100%\n47%\n\n\n#148\nADAE, imputation and recoding\n100%\n88%\n\n\n#147\nADVS vital signs\n94%\n83%\n\n\n#149\nADLB laboratory values\n97%\n53%\n\n\n#188\nADLB NCI-CTCAE v5.0 grading\n83%\n80%\n\n\n#166\nADTTE time to first serious AE\n89%\n61%\n\n\n#167\nADRS RECIST 1.1 response\n75%\n50%\n\n\n#159\nSDTM AE domain from raw data\n88%\n63%\n\n\n#118\nPhase 3 NSCLC trial simulation\n98%\n100%\n\n\n#104\nOncology simulation with delayed effect\n82%\n82%\n\n\n\ngroup-sequential-design has its own roll-ups across 15–21 trial-design scenarios:\n\n#80: latest run per issue (April 28): 73% vs 51%; 10 wins, 2 ties, 3 losses.\n#146: best with-skill run per issue (May 31): 90% vs 62%; 16 wins, 4 ties, 1 loss. This picks the skill’s best showing, so treat it as a ceiling."
+  },
+  {
+    "objectID": "benchmarks.html#caveats",
+    "href": "benchmarks.html#caveats",
+    "title": "pharma-skills benchmarks",
+    "section": "Caveats",
+    "text": "Caveats\n\nSmall numbers of runs; rubrics differ by issue and several were tightened and re-scored over time.\nRuns vary in model, skill version, and date. Results are directional, not a validated comparison.\nLosses for group-sequential-design were mostly scope gaps (problems outside what the skill covers), not the base model being better."
+  },
+  {
+    "objectID": "benchmarks.html#get-involved",
+    "href": "benchmarks.html#get-involved",
+    "title": "pharma-skills benchmarks",
+    "section": "Get involved",
+    "text": "Get involved\n\nBrowse all benchmark issues: github.com/RConsortium/pharma-skills/issues\nContribute a skill, a test case, or a benchmark run: github.com/RConsortium/pharma-skills\nSubmissions Working Group: rconsortium.github.io/submissions-wg\n\n\nCompiled by Jeff Dickinson for BBSW 2026. Workshop slides: jeffreyad.github.io/bbsw-2026-harness-workshop"
+  },
+  {
+    "objectID": "index.html#harness-engineering",
+    "href": "index.html#harness-engineering",
+    "title": "Harness Engineering",
+    "section": "Harness engineering",
+    "text": "Harness engineering\nMake AI output reliable and traceable\nBBSW 2026 Day 0 Hands-on Workshop · Nov 4, 2026 · Genentech Campus\nJeff Dickinson, PhD — Navitas Data Sciences\n\n\nSlot: 0:55–1:25 (30 min), after Philip’s build/agentic-coding fundamentals. Later: 2:05–3:00 integration sprint, shared with Philip.\nEverything today is prompt-driven. Each exercise slide has a box you copy and paste into the AI agent. Attendees are in the preconfigured Posit environment."
+  },
+  {
+    "objectID": "index.html#meet-vibe-coding-ken",
+    "href": "index.html#meet-vibe-coding-ken",
+    "title": "Harness Engineering",
+    "section": "Meet Vibe Coding Ken",
+    "text": "Meet Vibe Coding Ken\n\n\n\n\nHe codes the vibes.\n\nPrompt in, plausible code out\nPrototype in minutes\nNo spec, no checks, no review\n\nGreat for exploring. But would you hand Ken’s ADVS to a reviewer?\nToday: from vibe coding to a harness you can trust.\n\n\nIcebreaker. Vibe coding is not the enemy — it’s how most of us start with an agent. The question for biometrics is what you add around it so the output can be traced and reviewed. That’s the rest of this block."
+  },
+  {
+    "objectID": "index.html#get-the-slides-and-prompts",
+    "href": "index.html#get-the-slides-and-prompts",
+    "title": "Harness Engineering",
+    "section": "Get the slides and prompts",
+    "text": "Get the slides and prompts\n\n\n\n\nSlides\n\n\n\n\nRepo & prompts\n\n\n\njeffreyad.github.io/\nbbsw-2026-harness-workshop\n\nprompts.md — every prompt, ready to copy\nfallback/SPEC.md — ready-made ADVS spec\n\nPaste into Posit Assistant (Claude Code works too).\nCore: 1, 2, 3, 5 · Stretch: 4, 6 · Sprint: 7\n\n\n\nLeave this up while people open the environment. Anyone who falls behind can copy from prompts.md rather than retyping from the screen."
+  },
+  {
+    "objectID": "index.html#the-idea-in-one-slide",
+    "href": "index.html#the-idea-in-one-slide",
+    "title": "Harness Engineering",
+    "section": "The idea in one slide",
+    "text": "The idea in one slide\n\nAgent = model + harness\n\nThe model is the same for everyone. What differs is everything around it:\n\nSpecs — what “correct” means, written down before any code\nChecks — automated tests that tell the agent (and you) when it is wrong\nSkills — reusable instructions the agent loads for a class of task\n\nA good harness turns “plausible-looking output” into “output I can trust and trace.”\n\nVibe coding gets you a prototype in minutes. Harness engineering is what lets you put it in front of a reviewer. In biometrics the cost of a plausible but wrong derivation is high, so the harness is not optional."
+  },
+  {
+    "objectID": "index.html#todays-loop",
+    "href": "index.html#todays-loop",
+    "title": "Harness Engineering",
+    "section": "Today’s loop",
+    "text": "Today’s loop\n\nSpec — write the requirement\nGenerate — the agent writes code from the spec\nCheck — run the checks, read the failures\nRefine — fix the spec, the checks, or the code\nTrace — every output points back to a spec line\n\nEach step is a prompt you paste. You review at every step.\n\nPhilip covers automating this loop (MCP, ellmer) in the next block. Here we do it by hand so you know what you are automating."
+  },
+  {
+    "objectID": "index.html#prompt-1-spec-let-the-agent-interview-you",
+    "href": "index.html#prompt-1-spec-let-the-agent-interview-you",
+    "title": "Harness Engineering",
+    "section": "Prompt 1 — Spec: let the agent interview you",
+    "text": "Prompt 1 — Spec: let the agent interview you\nA spec is a short file the agent reads before writing code. Do not write it cold — have the agent ask you questions.\nI want to derive ADVS from the VS domain in data/sdtm and the ADSL in\ndata/adam/adsl.parquet. Work in a new subfolder called harness/.\n\nDo not write any code yet. Interview me, one question at a time, about\nanything ambiguous: baseline definition, parameters, visit windows, flags.\nAsk at most 5 questions. When I say \"done\" (or after question 5), write\nharness/SPEC.md with a table of variables:\nname, label, derivation rule, source, and open questions.\nAnswer the questions. Then read harness/SPEC.md and edit anything wrong.\nInterview went sideways? Copy fallback/SPEC.md into harness/.\n\nThe point: the spec is where human judgment goes. The agent should surface decisions (baseline rule, population flag) rather than guess them.\nThe 5-question cap keeps this inside the time slot. fallback/SPEC.md has the decisions already made (baseline = last non-missing on or before TRTSDT, CHG NA on baseline, SAFFL = “Y” only) plus three open questions to discuss.\nWatch for people accepting the first draft. Ask them to find one rule in SPEC.md they would have decided differently."
+  },
+  {
+    "objectID": "index.html#what-a-good-spec-contains",
+    "href": "index.html#what-a-good-spec-contains",
+    "title": "Harness Engineering",
+    "section": "What a good spec contains",
+    "text": "What a good spec contains\n\nOne row per variable: name, label, derivation rule, source\nExplicit decisions — baseline rule, imputation, population\nOpen questions the agent could not resolve\nNothing the agent invented silently\n\nIf you can’t point to the spec line that justifies a line of code, the output isn’t traceable."
+  },
+  {
+    "objectID": "index.html#example-the-fallback-spec",
+    "href": "index.html#example-the-fallback-spec",
+    "title": "Harness Engineering",
+    "section": "Example: the fallback spec",
+    "text": "Example: the fallback spec\nTwo rows from fallback/SPEC.md:\n\nABLFL — “Y” on the last non-missing AVAL on or before TRTSDT, per subject and PARAMCD; otherwise NA\nCHG — AVAL - BASE on post-baseline records; NA on baseline records\n\nDecisions made: baseline = last non-missing on or before TRTSDT · CHG is NA (not 0) on baseline · SAFFL = “Y” only\nOpen questions the agent should not answer for you:\n\nHow should unscheduled visits be handled for baseline and windowing?\nAre visit windows required, or is the collected VISIT used as is?\nShould records with a missing ADT be dropped or kept with a flag?"
+  },
+  {
+    "objectID": "index.html#prompts-23-checks-tell-the-agent-when-its-wrong",
+    "href": "index.html#prompts-23-checks-tell-the-agent-when-its-wrong",
+    "title": "Harness Engineering",
+    "section": "Prompts 2–3 — Checks: tell the agent when it’s wrong",
+    "text": "Prompts 2–3 — Checks: tell the agent when it’s wrong\nAgents iterate well against a failing test. Give it one.\nRead harness/SPEC.md. Before deriving anything, write harness/checks.R:\na set of stopifnot() assertions that encode every testable rule in the\nspec (one row per record key, flags are \"Y\" or NA, baseline and change\nrules, etc.). Do not write the derivation yet. Show me the checks and tell me which\nspec rules you could NOT turn into a check.\nThen:\nNow write harness/derive_advs.R from harness/SPEC.md. Run it, then run\nharness/checks.R. If a check fails, fix the code first and tell me what\nyou changed. If you believe the check itself is wrong, stop and tell me\nwhy instead of editing it.\n\nChecks first, code second. This is test-driven development for derivations. The “which rules could you NOT check” question is the valuable one — those are what a human reviewer must look at by hand.\nInstruct: if the agent edits the check to make it pass, that is a red flag. The prompt gives it an explicit way out — stop and argue — instead."
+  },
+  {
+    "objectID": "index.html#prompt-4-stretch-review-markers",
+    "href": "index.html#prompt-4-stretch-review-markers",
+    "title": "Harness Engineering",
+    "section": "Prompt 4 (stretch) — Review markers",
+    "text": "Prompt 4 (stretch) — Review markers\nAsk the agent to mark every decision that belongs to you:\nAdd a \"# REVIEW:\" comment at every line where the code encodes a\nprotocol-specific decision (baseline definition, population, windowing).\nThen list all REVIEW markers with line numbers and the SPEC.md row each\none comes from.\nYour attention goes to the marked lines, not the whole file."
+  },
+  {
+    "objectID": "index.html#skills-reusable-instructions",
+    "href": "index.html#skills-reusable-instructions",
+    "title": "Harness Engineering",
+    "section": "Skills: reusable instructions",
+    "text": "Skills: reusable instructions\nA skill is a folder with a SKILL.md the agent loads when a request matches it.\nskills/\n  my-skill/\n    SKILL.md        # when to use it, step-by-step instructions\n    references/     # conventions, failure modes\n    scripts/        # code the agent can run\nSpec + checks become reusable when you capture them as a skill.\nExample: the community admiral skills in RConsortium/pharma-skills.\n\nContrast with a prompt: a prompt lives in one person’s chat history. A skill is version-controlled and reviewable. Think SOP the agent actually executes.\nBe honest about trade-offs: skills cost tokens, and for simple template-shaped tasks the base model already does fine. They help most on convention-heavy, high-stakes work."
+  },
+  {
+    "objectID": "index.html#do-skills-help-the-pharma-skills-benchmarks",
+    "href": "index.html#do-skills-help-the-pharma-skills-benchmarks",
+    "title": "Harness Engineering",
+    "section": "Do skills help? The pharma-skills benchmarks",
+    "text": "Do skills help? The pharma-skills benchmarks\nCommunity benchmarks in RConsortium/pharma-skills: the same task run with and without the skill, scored against a rubric.\n\n\n\n\n\n\n\n\n\n\n\nSkill\nScenarios\nWith skill\nWithout\nW / T / L\n\n\n\n\nadmiral-adsl\nADSL, baseline VS, pop. flags\n93%\n70%\n2 / 1 / 0\n\n\nadmiral-adae\nTEAE, imputation, recoding\n100%\n67%\n2 / 0 / 0\n\n\nadmiral-bds\nADVS, ADLB, CTCAE grading\n91%\n72%\n3 / 0 / 0\n\n\nadmiral-adtte, -adrs\ntime-to-event, RECIST 1.1\n82%\n56%\n2 / 0 / 0\n\n\nsdtm-oak\nAE domain from raw\n88%\n63%\n1 / 0 / 0\n\n\ngroup-sequential-design\n15 trial-design scenarios\n73%\n51%\n10 / 2 / 3\n\n\nclinical-trial-simulation\nNSCLC, NPH oncology sims\n90%\n91%\n0 / 1 / 1\n\n\n\n\nMean % of rubric items passed, latest scored run per issue (mostly Claude); W / T / L = skill wins, ties, losses. Small n, rubrics differ by issue — directional, not a validated comparison.\nPattern: big gains on convention-heavy derivations; little or none where the base model already knows the method.\n\nSources (pharma-skills issues, read Nov 5, 2026; latest scored run per issue):\n\nadmiral-adsl: #126 100 vs 75; #141 93.3 vs 93.3 (tie); #165 86.1 vs 41.7\nadmiral-adae: #137 100 vs 46.7; #148 100 vs 87.5\nadmiral-bds: #147 ADVS 94.4 vs 83.3; #149 ADLB 97.2 vs 52.8; #188 CTCAE 82.6 vs 80.4\nadmiral-adtte #166 88.9 vs 61.1; admiral-adrs #167 75.0 vs 50.0\nsdtm-oak #159 87.5 vs 62.5\ngroup-sequential-design: #80 roll-up (latest run per issue, Apr 28). The newer #146 roll-up (best with-skill run, May 31) is 90% vs 62%, 16/4/1, but that picks the skill’s best showing.\nclinical-trial-simulation: #118 97.5 vs 100; #104 81.8 vs 81.8\n\nTie-in to today: #147 is our ADVS task. The skill’s run flagged 674 unscheduled-visit records, the same open question in fallback/SPEC.md.\nGSD losses were scope gaps (problem outside what the skill covers), not the base model being smarter. That’s the argument for writing “when NOT to use this” into a skill’s description.\nMany runs differ in model, skill version, and rubric; several issues re-scored with tightened rubrics. Don’t quote these as precise numbers."
+  },
+  {
+    "objectID": "index.html#prompt-5-make-your-own-skill",
+    "href": "index.html#prompt-5-make-your-own-skill",
+    "title": "Harness Engineering",
+    "section": "Prompt 5 — Make your own skill",
+    "text": "Prompt 5 — Make your own skill\nLook at harness/SPEC.md, harness/checks.R, and harness/derive_advs.R\nwe just built. Create a skill called advs-derivation that captures how\nto do this task again, saved in .posit/assistant/skills/advs-derivation/\n(SKILL.md inside it).\n\nThe skill should include:\n\n- frontmatter with a name and a description that says when to use it\n- the steps we followed (interview, spec, checks, derive, review markers)\n- the conventions we settled on\n- what to ask the user rather than assume\n\nKeep it under 100 lines. Show it to me before saving.\nClaude Code: save to .claude/skills/advs-derivation/SKILL.md instead. Then start a new chat so the skill loads, and test it:\nDerive ADLB from the LB domain in data/sdtm.\nDid the agent load your skill without being told to?\n\nZero-to-skill in a few minutes. If the skill is not triggered, the description is usually the problem — it needs to say when to use it.\nAnthropic’s skill-creator skill is an alternative if it is installed in the environment."
+  },
+  {
+    "objectID": "index.html#prompt-6-stretch-check-the-harness-itself",
+    "href": "index.html#prompt-6-stretch-check-the-harness-itself",
+    "title": "Harness Engineering",
+    "section": "Prompt 6 (stretch) — Check the harness itself",
+    "text": "Prompt 6 (stretch) — Check the harness itself\nReview the advs-derivation SKILL.md as a skeptical\nbiostatistician. What would a new agent get wrong following it? What is\nambiguous? What is missing a check? Suggest edits; don't apply them.\nThe harness is code too: review it, version it, test it."
+  },
+  {
+    "objectID": "index.html#apply-the-workflow-to-your-idea",
+    "href": "index.html#apply-the-workflow-to-your-idea",
+    "title": "Harness Engineering",
+    "section": "Apply the workflow to your idea",
+    "text": "Apply the workflow to your idea\nPick something from your own work — or one of these:\n\nADaM spec-to-code (ADSL, ADAE, ADLB)\nAn interactive visualization with traceability to source data\nClinical trial design optimization\nPortfolio-level analysis or prediction\nBioinformatics pipeline QC\n\nYou have the full loop: spec → checks → skill → generate → refine.\n\n2:05–3:00, with Philip. Combine with his loop engineering (MCP, ellmer) material. Circulate; ask people which step they’re on rather than what they’re building."
+  },
+  {
+    "objectID": "index.html#prompt-7-starter-prompt-for-your-idea",
+    "href": "index.html#prompt-7-starter-prompt-for-your-idea",
+    "title": "Harness Engineering",
+    "section": "Prompt 7 — Starter prompt for your idea",
+    "text": "Prompt 7 — Starter prompt for your idea\nI want to build: ______\n\nDo not write code yet. Interview me one question at a time until you can\nwrite SPEC.md. Then propose checks for it and wait for my approval.\nUse only public or synthetic data. Mark every decision I need to make\nwith a \"# REVIEW:\" comment.\nRules of the sprint:\n\nSpec first, checks second, code third\nPublic or synthetic data only\nBe ready to show one spec line, one check, and one output in the showcase"
+  },
+  {
+    "objectID": "index.html#showcase",
+    "href": "index.html#showcase",
+    "title": "Harness Engineering",
+    "section": "Showcase",
+    "text": "Showcase\nTwo minutes each:\n\nWhat did you build?\nOne thing the spec or checks caught that you would have missed\nOne thing you still have to decide yourself\n\n\nPick 3–4 volunteers. Praise the “check caught a bug” stories — those are the best argument for the harness."
+  },
+  {
+    "objectID": "index.html#takeaways",
+    "href": "index.html#takeaways",
+    "title": "Harness Engineering",
+    "section": "Takeaways",
+    "text": "Takeaways\n\nSpecs put human judgment first\nChecks let the agent fail fast and let you verify\nSkills make it reusable and reviewable\nReview markers direct your attention to what matters\n\nOutput from this workflow is a drafting aid, not a validated deliverable.\nAll prompts: prompts.md in github.com/jeffreyad/bbsw-2026-harness-workshop"
+  },
+  {
+    "objectID": "index.html#disclaimer",
+    "href": "index.html#disclaimer",
+    "title": "Harness Engineering",
+    "section": "Disclaimer",
+    "text": "Disclaimer\nLLM output can be wrong or vary between runs. Independently verify all generated code and results against your own QC process before they inform any regulatory, clinical, safety, or GxP-regulated activity, and comply with your organization’s policies.\nReview any script an agent writes before running it, and only supply data you are permitted to use.\n\nSay this out loud. It’s the most important slide for this audience."
+  },
+  {
+    "objectID": "index.html#thank-you",
+    "href": "index.html#thank-you",
+    "title": "Harness Engineering",
+    "section": "Thank you",
+    "text": "Thank you\n\n\nJeff Dickinson, PhD\nNavitas Data Sciences\njeff.dickinson@navitaslifesciences.com\ngithub.com/jeffreyad\nQuestions?\n\n\n\n\nSlides"
+  }
+]
